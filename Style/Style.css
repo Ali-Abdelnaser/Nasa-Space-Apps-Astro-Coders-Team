@@ -1,0 +1,102 @@
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  transition: background 0.6s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* header */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  background: rgba(0,0,0,0.25);
+  z-index:3;
+}
+header h1{ margin:0; font-size:18px; }
+header nav a{ color:#fff; text-decoration:none; margin-left:12px; }
+
+/* hero and controls */
+.hero{ 
+  text-align:center; 
+  padding:22px 16px; 
+  text-shadow:0 2px 6px rgba(0,0,0,0.45);
+ }
+.controls{
+   display:flex; 
+   gap:8px; 
+   justify-content:center; 
+   align-items:center; 
+   flex-wrap:wrap; 
+   padding:12px; 
+   z-index:3; 
+  }
+.controls input[type="text"], .controls input[type="date"]{
+  padding:10px; 
+  border-radius:8px; 
+  border:none; 
+  min-width:160px;
+}
+.controls button{ padding:10px 12px; border-radius:8px; border:none; cursor:pointer; background:rgba(0,0,0,0.35); color:#fff; }
+
+/* weather card */
+.weather-wrap{ display:flex; justify-content:center; padding:20px; z-index:3; }
+.weather-card{
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  border-radius:14px;
+  padding:18px;
+  max-width:420px;
+  width:90%;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+.wc-top{ display:flex; justify-content:space-between; font-size:14px; opacity:0.95; }
+.wc-main{ display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
+.wc-temp{ font-size:72px; font-weight:700; color:#fff; }
+.wc-metrics{ display:flex; flex-direction:column; gap:8px; text-align:right; font-weight:600; }
+.wc-condition{ text-align:center; margin-top:12px; font-size:20px; font-weight:700; text-shadow:0 2px 6px rgba(0,0,0,0.6); }
+
+/* modal map */
+.modal{ display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.7); }
+.modal .close{ position:absolute; top:12px; right:16px; font-size:32px; color:#fff; cursor:pointer; z-index:2100; }
+#map{ height:100%; width:100%; }
+
+/* ---------- background images by condition (Unsplash fallbacks) ---------- */
+/* You can replace URLs with local 'images/*.jpg' files if you prefer */
+
+.bg-default { background-image: url("https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=70"); }
+
+/* Sunny: bright desert/clear sky */
+.bg-sunny {
+  background-image: url("../Images/sunny.jpeg");
+}
+
+/* Stormy: dark clouds / lightning vibe */
+.bg-stormy {
+  background-image: url("../Images/stormy.jpeg");
+}
+
+/* Windy: open fields or moving clouds */
+.bg-windy {
+  background-image: url("../Images/windy.jpeg");
+}
+
+/* Cloudy: overcast sky */
+.bg-cloudy {
+  background-image: url("../Images/cloudy.jpeg");
+}
+.bg-rainy {
+  background-image: url("../Images/cloudy.jpeg");
+}
+/* small responsive tweak */
+@media (max-width:520px){
+  .wc-temp{ font-size:44px; }
+  .weather-card{ padding:14px; }
+}

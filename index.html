@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astro Coders — Weather App</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Style/Style.css">
+
+  <!-- Leaflet CSS (map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+</head>
+<body class="bg-default">
+  <header>
+    <h1>Astro Coders</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Map</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Check the Weather Anywhere in Egypt</h2>
+      <p>Enter a location and date or pick on the map 🌍</p>
+    </section>
+
+    <section class="controls">
+      <input id="place" type="text" placeholder="Enter location..." />
+      <input id="date" type="date" />
+      <button id="predictBtn">Predict Weather</button>
+      <button id="mapBtn">Pick from Map</button>
+    </section>
+
+    <section class="weather-wrap">
+      <div class="weather-card" id="predictionBox">
+        <div class="wc-top">
+          <div class="wc-city" id="cityText">—</div>
+          <div class="wc-date" id="dateText">—</div>
+        </div>
+
+        <div class="wc-main">
+          <div class="wc-temp">
+            <span id="tempValue">--</span><span class="deg">°C</span>
+          </div>
+
+          <div class="wc-metrics">
+            <div class="metric">💨 <span id="windText">--</span></div>
+            <div class="metric">💧 <span id="humText">--</span></div>
+          </div>
+        </div>
+
+        <div class="wc-condition" id="conditionText">No data yet...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- fullscreen map modal -->
+  <div id="mapContainer" class="modal">
+    <span class="close" id="closeMapBtn">&times;</span>
+    <div id="map"></div>
+  </div>
+
+  <footer>Made with ❤️ by Astro Coders</footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
