@@ -1,0 +1,10 @@
+flutter_native_splash:
+  #  للايفون والاندرويد الاقل من 12
+  color: "#ffffff"
+  image: assets/img/splash.png
+  #   الاندرويد الاكبر من 12
+  android_12:
+    image: assets/img/splash.png
+    icon_background_color: "#ffffff"
+  web: false
+# flutter pub run flutter_native_splash:create --path=flutter_native_screen.yaml
